@@ -8,7 +8,7 @@
   "navigation": {
     "groups": [
       { "group": "Get started", "pages": ["index", "quickstart", "limits"] },
-      { "group": "Clients", "pages": ["clients", "mcp"] }
+      { "group": "Clients", "pages": ["clients", "mcp-server"] }
     ]
   },
   "navbar": {
