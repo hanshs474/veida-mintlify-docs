@@ -1,0 +1,27 @@
+---
+title: "Veida API"
+description: "Generate AI images from any language with no API key, account or card."
+---
+
+[Veida](https://veida.ai/?utm_source=mintlify&utm_medium=docs) is an online AI image generator.
+Its anonymous free tier answers plain HTTP calls without a key, an account or a card, and these
+docs cover the clients that wrap it in thirteen languages.
+
+```python
+from veida import generate
+print(generate("a paper boat on a calm lake at sunrise, soft light", aspect_ratio="16:9"))
+```
+
+Every client does the same three things:
+
+1. invents a fresh client id (sent as `x-anon-id`), because the free grant pays for one image per id;
+2. submits the prompt to `POST /api/ai/generate`;
+3. polls `GET /api/ai/anon-query` until a CDN URL comes back, and returns it.
+
+| Language | Package | Page |
+|---|---|---|
+| Python | `pip install veida` | [Python](sdk/python.md) |
+| JavaScript / TypeScript | `npm install veida` · `jsr:@veida/veida` | [JavaScript](sdk/javascript.md) |
+| Go | `go get github.com/hanshs474/veida-go` | [Go](sdk/go.md) |
+
+Start with the [quickstart](/quickstart), check the [limits](/limits), or pick a ready [client](/clients).

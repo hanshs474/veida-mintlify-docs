@@ -1,0 +1,36 @@
+---
+title: "Quickstart"
+description: "Two HTTP calls: submit a prompt, then poll until the image URL comes back."
+---
+
+Two calls, no key. Pick any string as the client id; a new one per image is what the clients do.
+
+## 1. Submit
+
+```bash
+curl -s https://veida.ai/api/ai/generate \
+  -H 'content-type: application/json' \
+  -H 'x-anon-id: my-test-123' \
+  -d '{"provider":"kie","mediaType":"image","model":"veida-image-v1","scene":"text-to-image",
+       "prompt":"a paper boat on a calm lake at sunrise, soft light",
+       "options":{"aspect_ratio":"16:9"}}'
+```
+
+Success is `{"code":0,"data":{"id":"<task id>", ...}}`.
+
+The quota wall is **also HTTP 200 with code 0**: `{"code":0,"data":{"wall":true,"reason":"anon_ip_daily"}}`.
+Check `data.wall` before reading `data.id`, or the failure surfaces as a missing task id.
+
+## 2. Poll
+
+```bash
+curl -s 'https://veida.ai/api/ai/anon-query?taskId=<task id>&provider=kie&mediaType=image' \
+  -H 'x-anon-id: my-test-123'
+```
+
+Poll every few seconds with the **same** client id. When `data.images[0]` is present it is the
+permanent CDN URL, and `data.watermarked[0]` says whether a mark was drawn. `data.status` moves
+between pending and processing and is not monotonic; only `failed` or `error` is terminal, and
+that means the content filter refused the prompt.
+
+A run usually takes 40 to 120 seconds.

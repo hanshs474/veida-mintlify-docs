@@ -1,0 +1,14 @@
+---
+title: "MCP server"
+description: "Let Claude, Cursor, Cline or Windsurf generate images on Veida's free tier."
+---
+
+`veida-mcp` is an MCP server that talks to the same anonymous free tier, so an agent can make an image the moment it is installed. There is no key to set.
+
+```json
+{ "mcpServers": { "veida": { "command": "npx", "args": ["-y", "veida-mcp"] } } }
+```
+
+Tools: `generate_image`, `list_models`, `browse_tools`, `free_tier_limits`.
+
+Source: [github.com/hanshs474/veida-mcp](https://github.com/hanshs474/veida-mcp). For larger models such as [GPT Image 2](https://veida.ai/image/gpt-image-2?utm_source=mintlify&utm_medium=docs), use the [AI image generator](https://veida.ai/image?utm_source=mintlify&utm_medium=docs) signed in.

@@ -1,0 +1,24 @@
+---
+title: "Limits"
+description: "What the anonymous free tier allows, per client id and per machine."
+---
+
+Measured against the running service:
+
+| | |
+|---|---|
+| Anonymous grant per client id | 4 credits |
+| One text-to-image run (`veida-image-v1`) | 4 credits |
+| Per-IP ceiling | 30 credits a day, roughly 7 images |
+| Output | 1K, watermarked |
+| Aspect ratios | 1:1, 16:9, 9:16, 4:3, 3:4 |
+
+Editing an existing photo is not available anonymously: the editing model costs 30 credits
+against a 4-credit grant.
+
+Signing in on veida.ai removes the watermark and opens the larger models, among them
+[GPT Image 2](https://veida.ai/image/gpt-image-2?utm_source=mintlify&utm_medium=docs),
+[Nano Banana 2](https://veida.ai/image/nano-banana-2?utm_source=mintlify&utm_medium=docs) and
+[Seedream 5.0 Lite](https://veida.ai/image/seedream-5-lite?utm_source=mintlify&utm_medium=docs).
+Current plans are on the [pricing page](https://veida.ai/pricing?utm_source=mintlify&utm_medium=docs);
+prompt examples are in the [prompt library](https://veida.ai/image/prompts?utm_source=mintlify&utm_medium=docs).

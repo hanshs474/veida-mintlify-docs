@@ -1,0 +1,21 @@
+{
+  "$schema": "https://mintlify.com/docs.json",
+  "theme": "mint",
+  "name": "Veida API",
+  "description": "Generate AI images over plain HTTP with no API key: a client id you make up, two calls, and a CDN URL back.",
+  "colors": { "primary": "#7C5CFF", "light": "#A78BFA", "dark": "#6D28D9" },
+  "favicon": "/favicon.svg",
+  "navigation": {
+    "groups": [
+      { "group": "Get started", "pages": ["index", "quickstart", "limits"] },
+      { "group": "Clients", "pages": ["clients", "mcp"] }
+    ]
+  },
+  "navbar": {
+    "links": [{ "label": "AI image generator", "href": "https://veida.ai/image?utm_source=mintlify&utm_medium=docs" }],
+    "primary": { "type": "button", "label": "Open Veida", "href": "https://veida.ai/?utm_source=mintlify&utm_medium=docs" }
+  },
+  "footer": {
+    "socials": { "website": "https://veida.ai/?utm_source=mintlify&utm_medium=docs", "github": "https://github.com/hanshs474/veida-mcp" }
+  }
+}
